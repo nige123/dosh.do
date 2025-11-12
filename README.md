@@ -1,12 +1,13 @@
-# dosh (DO SHell)
+# dosh (do shell) - LLM-powered shell commands
 
-LLM-powered utility for requesting and executing shell commands. 
+Make a request using natural language and **dosh** suggests a shell command to fulfil your request. 
 
-Make a request using natural language and **dosh** prompts an LLM for a shell command to fulfil your request. 
+The command will NOT execute without your confirmation. Please be careful when confirming. 
 
-It's OK to feel shy about executing the suggested command.
+The command suggestion includes an explanation of what the command does, and a warning if the command will make changes.
 
-The command will not execute without your confirmation. Please be careful when confirming. 
+Configure the LLM settings with ```dosh config```.
+
 
 ## Usage
 ```
