@@ -5,11 +5,11 @@
         "JSON::Fast",
         "LLM::DWIM"
     ],
-    "description": "dosh (DO SHell) - natural shell commands.",
+    "description": "dosh (do shell) - LLM-powered shell commands.",
     "license": "Artistic-2.0",
     "name": "DOSH",
     "provides": {
-        "DOSH::CLI": "lib/SHAI/CLI.rakumod"
+        "DOSH::CLI": "lib/DOSH/CLI.rakumod"
     },
     "resources": [],
     "source-url": "git://github.com/nige123/dosh.git",
