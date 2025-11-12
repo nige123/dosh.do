@@ -1,4 +1,4 @@
-unit module DOSH::CLI;
+unit module DOSH::CLI:ver<6.0.0>:auth<zef:nige123>;
 
 use LLM::DWIM;
 use JSON::Fast;
