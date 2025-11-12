@@ -1,5 +1,8 @@
 {
   "auth": "zef:nige123",
+  "bin": [
+    "bin/dosh"
+  ],
   "build-depends": [
   ],
   "depends": [
@@ -12,7 +15,6 @@
   "provides": {
     "DOSH::CLI": "lib/DOSH/CLI.rakumod"
   },
-  "bin": [ "bin/dosh" ],
   "resources": [
   ],
   "source-url": "https://github.com/nige123/dosh.do.git",
