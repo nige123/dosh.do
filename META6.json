@@ -1,0 +1,25 @@
+{
+    "auth": "zef:nige123",
+    "build-depends": [],
+    "depends": [
+        "JSON::Fast",
+        "LLM::DWIM"
+    ],
+    "description": "dosh (DO SHell) - natural shell commands.",
+    "license": "Artistic-2.0",
+    "name": "DOSH",
+    "provides": {
+        "DOSH::CLI": "lib/SHAI/CLI.rakumod"
+    },
+    "resources": [],
+    "source-url": "git://github.com/nige123/dosh.git",
+    "support": {
+        "bugtracker": "https://github.com/nige123/dosh/issues"
+    },
+    "tags": [
+        "llm",
+        "coding"
+    ],
+    "test-depends": [],
+    "version": "6"
+}
