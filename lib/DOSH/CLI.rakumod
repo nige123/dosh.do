@@ -1,4 +1,4 @@
-unit module DOSH::CLI:ver<6.0.0>:auth<zef:nige123>;
+unit module DOSH::CLI:ver<7.0.0>:auth<zef:nige123>;
 
 use LLM::DWIM;
 use JSON::Fast;
@@ -66,7 +66,7 @@ multi sub MAIN ('config') is export {
 
 #| show the version
 multi sub MAIN ('version') is export {
-    say "6";
+    say "7.0.0";
 }
 
 sub CONFIG is export {
@@ -149,14 +149,14 @@ sub render-prompt {
     return qq:to"PROMPT";
 
     You are a senior {$*DISTRO.name} shell engineer on {$*KERNEL.name} {$*KERNEL.release} ({$*KERNEL.hardware}).
-    Translate a natural-language request into ONE safe shell command.
+    Translate a natural-language request into ONE safe shell command for execution on the {$*VM.osname} operating system.
     
     RESPONSE FORMAT (STRICT):
     Return MINIFIED JSON on a single line, with EXACT keys:
     \{"shell_command":"...","explanation":"...","warning":""\}
     
     RULES:
-    - shell_command: a single-line POSIX shell command that fully addresses the request.
+    - shell_command: a single-line shell command that fully addresses the request.
     - Prefer read-only substitutes (e.g., 'du -sh * | sort -h | tail -n 20') when user intent is unclear.
     - NEVER include sudo unless essential; avoid destructive flags by default.
     - explanation: 1 short sentence in plain English with a friendly tone. 
