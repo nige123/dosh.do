@@ -1,4 +1,4 @@
-unit module DOSH::CLI:ver<7.0.0>:auth<zef:nige123>;
+unit module DOSH::CLI:ver<8.0.0>:auth<zef:nige123>;
 
 use LLM::DWIM;
 use JSON::Fast;
@@ -66,7 +66,9 @@ multi sub MAIN ('config') is export {
 
 #| show the version
 multi sub MAIN ('version') is export {
-    say "7.0.0";
+
+    say $?DISTRIBUTION.version // 'unknown';
+    
 }
 
 sub CONFIG is export {
