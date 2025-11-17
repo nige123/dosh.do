@@ -3,6 +3,15 @@ unit module DOSH::CLI:ver<8.0.0>:auth<zef:nige123>;
 use LLM::DWIM;
 use JSON::Fast;
 
+
+# Keep this in sync with META6.json "version"
+my constant $VERSION = '8.0.0';
+
+multi sub MAIN('version') is export {
+    say $VERSION;
+}
+
+
 #| Prompt an LLM with a natural language request for a shell command. Only execute the command if confirmed.
 multi sub MAIN (*@args) is export {
     
@@ -62,13 +71,6 @@ multi sub MAIN ('help') is export {
 #| configure defaults
 multi sub MAIN ('config') is export {
     CONFIG();
-}
-
-#| show the version
-multi sub MAIN ('version') is export {
-
-    say $?DISTRIBUTION.version // 'unknown';
-    
 }
 
 sub CONFIG is export {

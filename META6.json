@@ -11,7 +11,7 @@
   ],
   "description": "dosh (do shell) - LLM-powered shell commands.",
   "license": "Artistic-2.0",
-  "name": "DOSH::CLI",
+  "name": "dosh",
   "provides": {
     "DOSH::CLI": "lib/DOSH/CLI.rakumod"
   },
