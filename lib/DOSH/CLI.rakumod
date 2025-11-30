@@ -1,11 +1,10 @@
-unit module DOSH::CLI:ver<8.0.0>:auth<zef:nige123>;
+unit module DOSH::CLI:ver<9.0.0>:auth<zef:nige123>;
 
 use LLM::DWIM;
 use JSON::Fast;
 
-
 # Keep this in sync with META6.json "version"
-my constant $VERSION = '8.0.0';
+my constant $VERSION = '9.0.0';
 
 multi sub MAIN('version') is export {
     say $VERSION;
