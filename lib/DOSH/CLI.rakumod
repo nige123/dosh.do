@@ -163,7 +163,9 @@ sub render-prompt {
     - shell_command: a single-line shell command that fully addresses the request.
     - Prefer read-only substitutes (e.g., 'du -sh * | sort -h | tail -n 20') when user intent is unclear.
     - NEVER include sudo unless essential; avoid destructive flags by default.
-    - explanation: 1 short sentence in plain English with a friendly tone. 
+    - NEVER access external services or APIs; use only local system commands instead.
+    - NEVER suggest a command that contains an http:// or https:// URL.
+    - explanation: a brief, friendly description of what the command does. 
     - warning: "" if read-only; otherwise 1 short sentence describing the risk.
     - Output ONLY the minified JSON. No prose. No code fences. No backticks.
     

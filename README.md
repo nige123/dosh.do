@@ -1,3 +1,5 @@
+![dosh](images/dosh-logo.png)
+
 # dosh (do shell) - LLM-powered shell commands
 
 Make a request using natural language and **dosh** suggests a shell command to fulfil your request. 
@@ -20,6 +22,10 @@ Configure the LLM settings with `dosh config`.
     shell> dosh config                             -- change LLM settings
     shell> dosh help                               -- show this help
 ```
+
+## Demo
+
+![demo](images/dosh-demo.gif)
 
 ## Install
 
