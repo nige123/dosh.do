@@ -43,6 +43,7 @@ Configure the LLM settings with `dosh config`.
 3. Set up your LLM with LLM::DWIM
 
     ```
+    shell> dosh help
     shell> dosh config
     shell> rakudoc LLM::DWIM
     ```
