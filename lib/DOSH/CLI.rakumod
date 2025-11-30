@@ -69,6 +69,12 @@ multi sub MAIN ('help') is export {
 }
 
 #| configure defaults
+multi sub MAIN ('prompt') is export {
+    say render-prompt();
+}
+
+
+#| configure defaults
 multi sub MAIN ('config') is export {
     CONFIG();
 }
@@ -118,6 +124,8 @@ sub USAGE is export {
         shell> dosh remove .tmp files larger than 100 meg 
         
         shell> dosh config                             -- change LLM settings
+        shell> dosh version                            -- current version
+        shell> dosh prompt                             -- show the prompt template
         shell> dosh help                               -- show this help
        
     USAGE
