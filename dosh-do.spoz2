@@ -1,0 +1,20 @@
+spoz2 0.1
+
+# dosh-do described in SPOZ2: intended behaviour, not implementation.
+# Distilled starting at version 9.0.0.  History starts here —
+# earlier versions are not reconstructed.
+#
+# SPOZ2 conventions: an invariant is a named rule bound to versions
+# (since, and until when retired).  History is append-only: a change
+# of intent is a NEW entry with the same name and a later "since";
+# old entries stay and remain authoritative for their versions.
+# Never edit or delete an existing entry.  "spoz2 guard" enforces
+# this; "spoz2 add" and "spoz2 retire" are the safe write paths.
+#
+# TODO (agent or human): read the codebase and replace the system
+# prose below, then write the invariants — the rules that matter,
+# each as self-contained prose, all "since 9.0.0".  State intent
+# (what must hold and why), not implementation detail.
+
+system dosh-do
+  TODO: what this system is for, in a few sentences of plain prose.
