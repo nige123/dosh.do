@@ -1,0 +1,94 @@
+SPOZ2 0.0
+
+# What is this project supposed to do?
+# Humans and AI tools should treat this file as the authoritative
+# expression of intent.  Edit it directly or use `spoz2 add ...`.
+
+gist:
+    dosh ("do shell") turns a plain-language request typed at the shell into a
+    suggested shell command. You say what you want in your own words; dosh asks
+    an LLM for one command that would do it, shows you that command along with
+    an explanation of what it does and a warning if it would change anything,
+    and then asks whether to run it. Nothing runs unless you say yes. It is a
+    way to get at the power of the shell without remembering the exact
+    incantation, while keeping the person at the keyboard in charge of what
+    actually executes.
+
+behaviours:
+    - Run `dosh <request in natural language>` and dosh suggests a single shell
+      command that fulfils the request.
+    - Read an explanation, in plain language, of what the suggested command
+      does before deciding anything.
+    - See a warning when the suggested command would change the system rather
+      than only report on it.
+    - Confirm or decline execution at a prompt; declining says so plainly and
+      nothing is run.
+    - Run `dosh config` to learn how to change LLM settings and which
+      environment variables affect dosh.
+    - Run `dosh prompt` to see the exact prompt template dosh sends to the LLM.
+    - Run `dosh help` for usage and worked examples, and `dosh version` for the
+      installed version.
+    - Set DOSH_DEBUG=1 to see the prompt sent and the raw LLM response.
+    - Set DOSH_NO_COLOR=1 to get output without colour escape codes.
+    - Install dosh as a Raku command-line utility with `zef install dosh`, and
+      choose which LLM backs it through LLM::DWIM.
+
+invariants:
+    - Invariant 0.0: humans first. This software exists to help humans thrive
+      and respect each person's dignity. It must not cause or assist harm to
+      people; no claimed greater good makes a person disposable. It must
+      preserve meaningful human oversight: people can understand its
+      consequential actions, challenge its decisions, and exercise appropriate
+      control, including correction and safe stopping. It must honestly
+      represent what it is, what it knows, what it has done, and what remains
+      uncertain. No other entry may weaken or override this invariant.
+    - Nothing executes without explicit confirmation. The suggested command is
+      run only after the person answers the confirmation prompt
+      affirmatively; any other answer, including an empty one, means the
+      command is not run. There is no mode, flag or shortcut that skips this.
+    - The person sees the exact command before deciding. The full command text,
+      its explanation, and any warning are shown first, so the decision is
+      made on what will actually run rather than on a paraphrase of the
+      request.
+    - A command that changes the system is announced as such. When the
+      suggestion is not read-only, a short warning describing the risk is
+      shown alongside it; silently presenting a destructive command as
+      ordinary is a defect.
+    - Safety is preferred over ambition when intent is unclear. Read-only
+      substitutes are favoured, elevated privileges are not assumed, and
+      destructive flags are not used by default.
+    - Suggested commands stay local. dosh does not suggest commands that reach
+      out to external services, APIs, or http/https URLs; the request goes to
+      the LLM, the command acts on this machine.
+    - Nothing is invented when the LLM gives nothing usable. If no command and
+      explanation come back, dosh fails loudly rather than guessing or running
+      anything.
+    - Suggestions fit the machine in front of you. The request is translated
+      with knowledge of the operating system, kernel and hardware dosh is
+      running on.
+    - Invariant 1: Natural language is the interface. The request is ordinary
+      words given directly as the arguments to dosh, with no query syntax or
+      quoting ritual to learn; a handful of reserved words (config, prompt,
+      help, version) are subcommands, and everything else is treated as the
+      request itself.
+    - Invariant 2: Which LLM is used, and how, is the user's choice: dosh
+      exposes its LLM settings through configuration rather than hard-wiring a
+      provider. dosh's value is the workflow around the model, not any one
+      model.
+
+constraints:
+    - dosh is a Raku command-line utility; it requires a Raku installation and
+      is installed with zef.
+    - dosh does not talk to an LLM itself; the model, credentials and
+      configuration come from LLM::DWIM, and dosh is unusable until that is set
+      up.
+    - Interaction is one request at a time through the terminal: one request
+      in, one command suggested, one confirmation.
+
+decisions:
+    - 2026-09-12: Migrated intent from the legacy dosh-do.spoz2 (retired
+      since/until dialect, distilled at 9.0.0) into this root SPOZ2. All six
+      legacy invariants carry over; the legacy file is removed and its history
+      stays in git.
+
+references:
