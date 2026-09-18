@@ -35,8 +35,11 @@ flag or shortcut that skips this.
 
 INVARIANT 8
 The person sees the exact command before deciding. The full command text, its
-explanation, and any warning are shown first, so the decision is made on what
-will actually run rather than on a paraphrase of the request.
+explanation, and any warning are shown first.
+
+BECAUSE
+The decision is made on what will actually run rather than on a paraphrase of
+the request.
 
 INVARIANT 9
 A command that changes the system is announced as such. When the suggestion is
