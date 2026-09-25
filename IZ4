@@ -3,7 +3,7 @@ IZ4
 # Every IZ4 inherits Invariants 0-4 ('iz4 invariants' shows them).
 # Project invariants begin at 5.
 
-IS FOR WHAT
+IS FOR WHAT?
 dosh ("do shell") turns a plain-language request typed at the shell into a
 suggested shell command. You say what you want in your own words; dosh asks an
 LLM for one command that would do it, shows you that command along with an
@@ -12,7 +12,7 @@ asks whether to run it. Nothing runs unless you say yes. It is a way to get at
 the power of the shell without remembering the exact incantation, while keeping
 the person at the keyboard in charge of what actually executes.
 
-IS FOR WHO
+IS FOR WHO?
 People at a terminal who know what they want to do but not the exact shell
 command.
 
