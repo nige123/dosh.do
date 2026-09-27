@@ -20,8 +20,14 @@ Configure the LLM settings with `dosh config`.
     shell> dosh remove .tmp files larger than 100 meg 
     
     shell> dosh config                             -- change LLM settings
+    shell> dosh prompt                             -- show the prompt sent to the LLM
     shell> dosh help                               -- show this help
+    shell> dosh version                            -- current version
 ```
+
+Set `DOSH_DEBUG=1` to see the prompt text and raw LLM response, and
+`DOSH_NO_COLOR=1` for output without colour. One request in, one command
+suggested, one confirmation; declining says so plainly and runs nothing.
 
 ## Demo
 
